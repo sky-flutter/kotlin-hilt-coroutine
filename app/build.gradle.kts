@@ -45,6 +45,7 @@ android {
 dependencies {
 
     implementation(AppDependencies.appLibraries)
+    implementation(AppDependencies.navGraph)
     testImplementation(AppDependencies.testLibraries)
     androidTestImplementation(AppDependencies.androidTestLibraries)
     kapt(AppDependencies.hiltKapt)

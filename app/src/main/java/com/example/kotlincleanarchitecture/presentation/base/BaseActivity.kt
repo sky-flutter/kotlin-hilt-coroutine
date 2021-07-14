@@ -4,14 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModel
-import javax.inject.Inject
 
-abstract class BaseActivity<B : ViewDataBinding, V : ViewModel> : AppCompatActivity() {
+abstract class BaseActivity<B : ViewDataBinding> : AppCompatActivity() {
+
     lateinit var mBinding: B
-
-    @Inject
-    lateinit var mViewModel: V
 
     abstract fun layoutId(): Int
 

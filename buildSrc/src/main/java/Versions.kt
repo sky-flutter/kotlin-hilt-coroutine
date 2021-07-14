@@ -9,6 +9,7 @@ object Versions {
     const val liveData = "2.3.1"
     const val viewModel = "2.3.1"
     const val constraintLayout = "2.0.4"
+    const val navGraphVersion = "2.3.5"
 
     //Networking
     const val retrofit = "2.5.0"

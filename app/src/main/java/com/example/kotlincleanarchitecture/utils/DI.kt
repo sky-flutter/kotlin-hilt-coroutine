@@ -50,35 +50,21 @@ class NetworkModule {
     @Singleton
     @Provides
     fun provideOkHttpClient(
-        cache: Cache,
-        headerInterceptor: Interceptor,
-        httpLoggingInterceptor: HttpLoggingInterceptor
+        cache: Cache
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .connectTimeout(CONNECTION_TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
-            .addInterceptor(headerInterceptor)
-            .addInterceptor(httpLoggingInterceptor)
+            .addInterceptor(Interceptor {
+                val requestBuilder = it.request().newBuilder()
+                it.proceed(requestBuilder.build())
+            })
+            .addInterceptor(HttpLoggingInterceptor().apply {
+                setLevel(if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE)
+            })
             .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)
             .cache(cache)
             .build()
-    }
-
-    @Singleton
-    @Provides
-    fun provideHeaderInterceptor(): Interceptor {
-        return Interceptor {
-            val requestBuilder = it.request().newBuilder()
-            it.proceed(requestBuilder.build())
-        }
-    }
-
-    @Singleton
-    @Provides
-    fun provideHttpLoggingInterceptor(): Interceptor {
-        return HttpLoggingInterceptor().apply {
-            setLevel(if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE)
-        }
     }
 
     @Singleton

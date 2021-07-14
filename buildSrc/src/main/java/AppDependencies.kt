@@ -6,10 +6,13 @@ object AppDependencies {
     private const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     private const val material = "com.google.android.material:material:${Versions.material}"
     private const val annotation = "androidx.annotation:annotation:${Versions.annotation}"
-    private const val constraintLayout =
-        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    private const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     private const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.liveData}"
     private const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
+
+    //Graph
+    private const val navFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navGraphVersion}"
+    private const val navUIKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navGraphVersion}"
 
     //Networking
     private const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
@@ -56,6 +59,11 @@ object AppDependencies {
 
     val hiltKapt = arrayListOf<String>().apply {
         add(hiltCompiler)
+    }
+
+    val navGraph = arrayListOf<String>().apply {
+        add(navFragmentKtx)
+        add(navUIKtx)
     }
 }
 
