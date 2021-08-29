@@ -1,12 +1,13 @@
-package com.example.kotlincleanarchitecture.data
+package com.example.kotlincleanarchitecture.network
 
-import androidx.viewbinding.BuildConfig
 import okhttp3.HttpUrl
 
 class URLFactory {
-    private val SCHEME = "https"
-    private val URL_PROD = "reqres.in"
-    private val URL_TESTING = "reqres.in"
+    companion object {
+        private const val SCHEME = "https"
+        private const val URL_PROD = "reqres.in"
+        private const val URL_TESTING = "reqres.in"
+    }
 
     operator fun invoke(): HttpUrl {
 

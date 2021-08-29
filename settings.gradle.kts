@@ -1,2 +1,3 @@
 include(":app")
-rootProject.name = "KotlinClearArchitecture"
+rootProject.name = "KotlinCleanArchitecture"
+include(":network")

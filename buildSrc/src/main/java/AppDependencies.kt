@@ -16,8 +16,8 @@ object AppDependencies {
 
     //Networking
     private const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
-    private const val gsonConverter =
-        "com.squareup.retrofit2:converter-gson:${Versions.gsonConverter}"
+    private const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.gsonConverter}"
+    private const val gson = "com.google.code.gson:gson:${Versions.gson}"
     private const val okHttpBom = "com.squareup.okhttp3:okhttp-bom:${Versions.okhttp}"
     private const val okHttp = "com.squareup.okhttp3:okhttp"
     private const val okHttpLogging = "com.squareup.okhttp3:logging-interceptor"
@@ -28,24 +28,37 @@ object AppDependencies {
     private const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 
     // Hilt
-    private const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
     private const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+
+    //Coroutine
+    const val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
+    const val coroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}"
 
     val appLibraries = arrayListOf<String>().apply {
         add(kotlinStdlib)
-        add(core)
-        add(appCompat)
         add(constraintLayout)
-        add(material)
         add(annotation)
         add(liveData)
         add(viewModel)
+        add(hilt)
+    }
+
+    val networkLibraries = arrayListOf<String>().apply {
         add(retrofit)
+        add(gson)
         add(gsonConverter)
         add(okHttpBom)
         add(okHttp)
         add(okHttpLogging)
-        add(hilt)
+    }
+
+    val appCommonLibraries = arrayListOf<String>().apply {
+        add(core)
+        add(appCompat)
+        add(material)
+//        add(coroutineCore)
+//        add(coroutineAndroid)
     }
 
     val testLibraries = arrayListOf<String>().apply {

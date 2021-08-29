@@ -1,14 +1,12 @@
-package com.example.kotlincleanarchitecture.utils
+package com.example.kotlincleanarchitecture.network.utils
 
 import android.content.Context
-import androidx.viewbinding.BuildConfig
-import com.example.kotlincleanarchitecture.data.ApiServices
-import com.example.kotlincleanarchitecture.data.URLFactory
-import com.example.kotlincleanarchitecture.presentation.MyApp
+import com.example.kotlincleanarchitecture.network.ApiServices
+import com.example.kotlincleanarchitecture.network.BuildConfig
+import com.example.kotlincleanarchitecture.network.URLFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.Cache
 import okhttp3.Interceptor
@@ -45,10 +43,6 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideContext(app: MyApp) = app.applicationContext
-
-    @Singleton
-    @Provides
     fun provideOkHttpClient(
         cache: Cache
     ): OkHttpClient {
@@ -65,12 +59,6 @@ class NetworkModule {
             .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)
             .cache(cache)
             .build()
-    }
-
-    @Singleton
-    @Provides
-    fun provideApplication(@ApplicationContext app: Context): MyApp {
-        return app as MyApp
     }
 
     @Singleton

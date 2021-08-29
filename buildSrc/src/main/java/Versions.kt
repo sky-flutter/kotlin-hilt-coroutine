@@ -1,6 +1,6 @@
 object Versions {
     const val gradle = "4.1.3"
-    const val kotlin = "1.4.31"
+    const val kotlin = "1.5.30"
 
     const val coreKtx = "1.5.0"
     const val appCompat = "1.3.0"
@@ -14,10 +14,14 @@ object Versions {
     //Networking
     const val retrofit = "2.5.0"
     const val gsonConverter = "2.5.0"
+    const val gson = "2.8.2"
     const val okhttp = "4.9.0"
 
     //Hilt
-    const val hilt = "2.35"
+    const val hilt = "2.38.1"
+
+    //Coroutine
+    const val coroutine = "1.3.9"
 
     const val jUnit = "4.13.2"
     const val extJunit = "1.1.2"

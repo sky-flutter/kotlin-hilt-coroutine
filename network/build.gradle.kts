@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
-    id("dagger.hilt.android.plugin")
     kotlin("android")
+    id("dagger.hilt.android.plugin")
     kotlin("kapt")
 }
 
@@ -10,7 +10,7 @@ android {
     buildToolsVersion(AppConfig.buildToolVersion)
 
     defaultConfig {
-        applicationId("com.example.kotlincleanarchitecture")
+        applicationId("com.example.kotlincleanarchitecture.network")
         minSdkVersion(AppConfig.minSdk)
         targetSdkVersion(AppConfig.targetSdk)
         versionCode(AppConfig.versionCode)
@@ -33,25 +33,17 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    android.buildFeatures {
-        dataBinding = true
-    }
-
     kotlinOptions {
         jvmTarget = "1.8"
     }
 }
 
 dependencies {
-
     implementation(AppDependencies.appCommonLibraries)
-    implementation(AppDependencies.appLibraries)
-    implementation(AppDependencies.navGraph)
+    implementation(AppDependencies.networkLibraries)
+    implementation(AppDependencies.hilt)
+    implementation(project(mapOf("path" to ":app")))
     testImplementation(AppDependencies.testLibraries)
     androidTestImplementation(AppDependencies.androidTestLibraries)
     kapt(AppDependencies.hiltKapt)
-}
-
-kapt {
-    correctErrorTypes=true
 }
