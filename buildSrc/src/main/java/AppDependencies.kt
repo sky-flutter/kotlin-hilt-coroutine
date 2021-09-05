@@ -31,6 +31,10 @@ object AppDependencies {
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
     private const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 
+    //Glide
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val glideProcessor = "com.github.bumptech.glide:compiler:${Versions.glide}"
+
     //Coroutine
     const val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
     const val coroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}"
@@ -42,6 +46,7 @@ object AppDependencies {
         add(liveData)
         add(viewModel)
         add(hilt)
+        add(glide)
     }
 
     val networkLibraries = arrayListOf<String>().apply {
@@ -57,8 +62,8 @@ object AppDependencies {
         add(core)
         add(appCompat)
         add(material)
-//        add(coroutineCore)
-//        add(coroutineAndroid)
+        add(coroutineCore)
+        add(coroutineAndroid)
     }
 
     val testLibraries = arrayListOf<String>().apply {
@@ -72,6 +77,9 @@ object AppDependencies {
 
     val hiltKapt = arrayListOf<String>().apply {
         add(hiltCompiler)
+    }
+    val glideKapt = arrayListOf<String>().apply {
+        add(glideProcessor)
     }
 
     val navGraph = arrayListOf<String>().apply {

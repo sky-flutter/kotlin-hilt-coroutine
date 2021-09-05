@@ -47,9 +47,13 @@ dependencies {
     implementation(AppDependencies.appCommonLibraries)
     implementation(AppDependencies.appLibraries)
     implementation(AppDependencies.navGraph)
+    implementation(AppDependencies.networkLibraries)
+    implementation(AppDependencies.hilt)
+    implementation(AppDependencies.glide)
     testImplementation(AppDependencies.testLibraries)
     androidTestImplementation(AppDependencies.androidTestLibraries)
     kapt(AppDependencies.hiltKapt)
+    kapt(AppDependencies.glideKapt)
 }
 
 kapt {

@@ -39,11 +39,11 @@ android {
 }
 
 dependencies {
-    implementation(AppDependencies.appCommonLibraries)
-    implementation(AppDependencies.networkLibraries)
-    implementation(AppDependencies.hilt)
-    implementation(project(mapOf("path" to ":app")))
+//    implementation(AppDependencies.appCommonLibraries)
+//    implementation(AppDependencies.networkLibraries)
+//    implementation(AppDependencies.hilt)
+//    implementation(project(mapOf("path" to ":app")))
     testImplementation(AppDependencies.testLibraries)
     androidTestImplementation(AppDependencies.androidTestLibraries)
-    kapt(AppDependencies.hiltKapt)
+//    kapt(AppDependencies.hiltKapt)
 }

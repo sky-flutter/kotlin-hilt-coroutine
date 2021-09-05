@@ -12,13 +12,16 @@ object Versions {
     const val navGraphVersion = "2.3.5"
 
     //Networking
-    const val retrofit = "2.5.0"
+    const val retrofit = "2.9.0"
     const val gsonConverter = "2.5.0"
     const val gson = "2.8.2"
     const val okhttp = "4.9.0"
 
     //Hilt
     const val hilt = "2.38.1"
+
+    //Glide
+    const val glide = "4.12.0"
 
     //Coroutine
     const val coroutine = "1.3.9"
